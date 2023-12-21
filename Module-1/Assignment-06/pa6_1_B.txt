@@ -1,0 +1,46 @@
+## PROBLEM  pa4_1 :
+    the worst case is when the string is actually Palindrome so the 'while' loop will have to 
+    iterate over all the string but in half bcz we're comparing the first part with the second one , element
+    by element in parallel.
+    Thus total cost is :
+    Θ(n//2 + 1) = Θ(n)   which is Linear
+    .....
+    The best case is when the first element and the last element are different thus 
+    the 'while' loop will break from the first iteration  OR  when 's' is an empty string .
+    Then the cost is : Θ(1)
+
+
+## PROBLEM  pa4_2_B :
+    There is no worst and best case for this algorithm because there is no 'break' condition for the loop which
+    means it will iterate 'end-start' times anyway 
+    Thus the total cost is always :  Θ(end-start)   which is Linear
+
+
+## PROBLEM  pa4_2_C :
+    There is no worst and best case for this algorithm because there is no 'break' condition for the loops which
+    means each one will iterate 'n' times anyway (noting that they are nested)
+    Thus the total cost is : Θ(n) * Θ(n) = Θ(n^2)   which is Quadratic
+
+
+## PROBLEM pa4_3_A :
+    There is no worst and best case for this algorithm because there is no 'break' condition for the loops which
+    means each one will iterate 'n' times anyway (noting that they are nested)
+    In the 'if' statement "t==t[::-1]" this equality will take O(len(t)) as a cost  (len(t) = n  in the worst case )
+    Thus the total cost is : O(n) * O(n) * O(n) = O(n^3)   which is Cubic
+
+
+## PROBLEM pa4_3_B :
+    The worst case is when the string is actually Palindrome which means the code will keep iterating till "i" becomes bigger than "j" 
+    in the first function which costs O(n/2 + 1)           with n = end-start
+    Then in the final function we have two nested loops costing O(n^2)
+    Thus the total cost is : O(n/2 + 1) * O(n^2) = O(n^3)   Which is Cubic
+
+
+## PROBLEM pa4_3_C :  
+    The worst case is when the original sequence is only formed by Palindrome subsequences variated between odd and even lengths , 
+    thus the three loops gonna iterate "n" times each.
+    Thus the total cost is : Θ(n) * ( Θ(n) + Θ(n) ) = Θ(n^2)  Which is Quadratic
+    ....
+    The best case is when there is no palindrom subsequences at all, then the "while" loops gonna cost Θ(1)
+    each time and the "for" loop of course iterates "n" times.
+    Thus the total cost is : Θ(n) * (Θ(1) + Θ(1)) = Θ(n)   which is Linear

@@ -1,0 +1,75 @@
+## PROBLEM  pa3_1_ A and B :
+    the worst case is when the user enters numbers already sorted so the 2nd 'for' loop will have to 
+    iterate over all the list which means from  n-1 times ----> Θ(n-1)
+    .
+    Thus total cost is adding the costs of the two 'for' loops :
+    Θ(n) + Θ(n-1) = Θ(2n-1) = Θ(n)   which is Linear
+
+
+## PROBLEM pa3_2_A :
+    the worst case is when the two lists entered by the user are actually equal , then the inequality
+    "L1[i] != L2[i]" will keep giving "False" value till the "for" loop ends at i=n-1 ----> Θ(n)   bcz it starts from 0
+    Taking into consideration the initialization of the two lists ----> Θ(n) + Θ(n)
+    .
+    Thus total cost : Θ(3n) = Θ(n)  which is Linear
+
+
+## PROBLEM pa3_2_B :
+    the worst case is also when the two lists entered by the user are actually equal, because the equality
+    "L1==L2" needs to check all the elements of both lists -----> cost : Θ(len(L1) + len(L2)) = Θ(2n) = Θ(n)  [with n = len(L1) = len(L2)]
+    And of course the initialization of L1 and L2 takes ----> cost : Θ(2n)
+    .
+    Thus total cost : Θ(3n) = Θ(n)  which is Linear 
+
+
+## PROBLEM pa3_2_C :
+    The worst case is when L1 and L2 are totally different and have no elements in common :
+    The initialization of the two lists takes Θ(2n) = Θ(n)
+    The nested loop ( for i(n times) and then for j(n times)) takes ----> cost : Θ(n) * Θ(n) = Θ(n^2)
+    Last 'for' loop costs Θ(n)
+    .
+    Thus total cost ---> Θ(n + n^2 + n) = Θ(n^2 + 2n) = Θ(n^2)  which Quadratic
+
+
+## PROBLEM pa3_3_A :
+    There is no worst case because the code will always keep running all the iterations of the loops .(no stopping conditions implemented as 'break')
+    The initialization of the list takes O(n)  as a cost 
+    The 1st 'for' loop will iterate n times ----> costs O(n)
+    The 2nd 'for' loop will iterate n times at first , then n-1 times , then n-2 times .... till 1 time ---> costs O(n*(n+1)/2) = O(n^2)
+    The 3rd 'for' loop will iterate only 1 time at first , then 2 times , then 3 times .... till n times  ---> costs O(n*(n+1)/2) = O(n^2)
+                                        2 3 4 5 6 ... n
+                                        3 4 5 6 ... n
+                                        4 5 6  ... n
+    The 4th 'for' loop will iterate (b+1-a) times ----> costs O(n)
+    .
+    Thus total cost --->  O(n) + O(n) * O(n) * O(n) = O(n + n^3) = O(n^3)   which is Cubic
+
+
+## PROBLEM pa3_3_B :
+    There is no worst case because the code will always keep running all the iterations of the loops .(no stopping conditions implemented as 'break')
+    The initialization of the list takes O(n)  as a cost 
+    The 1st 'for' loop will iterate n times ----> costs O(n)
+    The 2nd 'for' loop will iterate n times at first , then n-1 times , then n-2 times .... till 1 time ---> costs O(n*(n+1)/2) = O(n^2)
+    The slicing inside the 2nd loop "sum(L[i:j+1])" (arithmetic operation) takes ---> a cost of :  O(n)
+    The 3rd 'for' loop will iterate (b+1-a) times ----> costs O(n)
+    .
+    Thus total cost ----> O(n) + O(n) * O(n) * O(n) + O(n) = O(n * n * n + 2n) = O(n^3)   which is Cubic
+
+
+## PROBLEM pa3_3_C :
+    There is no worst case because the code will always keep running all the iterations of the loops .(no stopping conditions implemented as 'break')
+    The initialization of the list takes Θ(n)  as a cost 
+    The 1st 'for' loop will iterate n times ----> costs Θ(n)
+    The 2nd 'for' loop will iterate n times at first , then n-1 times , then n-2 times .... till 1 time ---> costs Θ(n*(n+1)/2) = Θ(n^2)
+    The 3rd 'for' loop will iterate (b+1-a) times ----> costs Θ(n)
+    .
+    Thus total cost ----> Θ(n) + Θ(n) * Θ(n) + Θ(n) = Θ( n * n + 2n) = Θ(n^2)   which is Quadratic
+
+
+## PROBLEM pa3_3_D :
+    There is no worst case because the code will always keep running all the iterations of the loops .(no stopping conditions implemented as 'break')
+    The initialization of the list takes Θ(n)  as a cost 
+    The 1st 'for' loop will iterate n times ----> costs Θ(n)
+    The 2nd 'for' loop will iterate (b+1-a) times ----> costs Θ(n)
+    .
+    Thus total cost ----> Θ(n) + Θ(n) + Θ(n) = Θ(n + n + n) = Θ(n)   which is Linear
